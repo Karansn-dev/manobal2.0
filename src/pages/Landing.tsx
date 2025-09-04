@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Brain, Heart, Shield, Users, Sparkles, ArrowRight, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import heroBackground from '@/assets/hero-bg.jpg';
 
 const Landing = () => {
   const features = [
@@ -40,7 +41,11 @@ const Landing = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent"></div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+          style={{ backgroundImage: `url(${heroBackground})` }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/80"></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">

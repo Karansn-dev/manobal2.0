@@ -2,104 +2,232 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* MANOBAL Design System - Premium Mental Health Platform */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors - MANOBAL Palette */
+    --background: 222 84% 4.9%; /* Deep space background */
+    --background-secondary: 215 28% 17%; /* Deep space blue */
+    --foreground: 210 20% 93%; /* Off-white text */
+    --foreground-muted: 215 16% 57%; /* Muted gray-blue */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Cards & Surfaces */
+    --card: 217 32% 18%; /* Dark card background */
+    --card-foreground: 210 20% 93%;
+    --card-border: 215 20% 25%; /* Subtle borders */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Primary Brand - Light Blue */
+    --primary: 213 94% 68%; /* #3B82F6 */
+    --primary-dark: 213 94% 58%; /* Darker for hover */
+    --primary-foreground: 0 0% 100%;
+    --primary-muted: 213 50% 40%; /* Muted primary */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Secondary - Dark Blue */
+    --secondary: 218 95% 31%; /* #1E3A8A */
+    --secondary-light: 218 70% 40%; /* Lighter secondary */
+    --secondary-foreground: 210 20% 93%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Accent Colors */
+    --accent: 213 94% 68%; /* Same as primary for consistency */
+    --accent-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Status Colors */
+    --success: 142 76% 36%; /* Green for success states */
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%; /* Amber for warnings */
+    --warning-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%; /* Red for errors */
+    --destructive-foreground: 0 0% 100%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* UI Elements */
+    --muted: 217 32% 18%; /* Same as card */
+    --muted-foreground: 215 16% 57%;
+    --popover: 217 32% 18%;
+    --popover-foreground: 210 20% 93%;
+    --border: 215 20% 25%;
+    --input: 215 20% 25%;
+    --ring: 213 94% 68%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(215, 28%, 17%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(215, 65%, 15%) 50%, hsl(213, 94%, 68%) 100%);
+    --gradient-card: linear-gradient(135deg, hsla(217, 32%, 18%, 0.8) 0%, hsla(215, 28%, 17%, 0.9) 100%);
+    --gradient-glow: radial-gradient(circle at center, hsla(213, 94%, 68%, 0.15) 0%, transparent 70%);
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Glass Effects */
+    --glass-bg: hsla(217, 32%, 18%, 0.4);
+    --glass-border: hsla(213, 94%, 68%, 0.2);
 
-    --radius: 0.5rem;
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    --sidebar-background: 0 0% 98%;
+    /* Spacing & Layout */
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsla(213, 94%, 68%, 0.3);
+    --shadow-card: 0 4px 24px hsla(0, 0%, 0%, 0.3);
+    --shadow-premium: 0 20px 40px hsla(0, 0%, 0%, 0.4), 0 0 60px hsla(213, 94%, 68%, 0.15);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Dark mode inherits the same values since MANOBAL is designed dark-first */
+    --background: 222 84% 4.9%;
+    --background-secondary: 215 28% 17%;
+    --foreground: 210 20% 93%;
+    --foreground-muted: 215 16% 57%;
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border transition-smooth;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-exo antialiased;
+    background: var(--gradient-primary);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
+  }
+}
+
+@layer components {
+  /* Glass Card Component */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Premium Glow Effect */
+  .premium-glow {
+    position: relative;
+  }
+
+  .premium-glow::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: var(--gradient-glow);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: var(--transition-smooth);
+  }
+
+  .premium-glow:hover::before {
+    opacity: 1;
+  }
+
+  /* Hero Section */
+  .hero-gradient {
+    background: var(--gradient-hero);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-glow);
+    opacity: 0.3;
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  /* Animated Background */
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.5; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px hsla(213, 94%, 68%, 0.3); }
+    50% { box-shadow: 0 0 40px hsla(213, 94%, 68%, 0.6); }
+  }
+
+  /* Interactive Elements */
+  .interactive-element {
+    @apply transform transition-all duration-300 ease-out;
+  }
+
+  .interactive-element:hover {
+    @apply scale-105;
+  }
+
+  .interactive-element:active {
+    @apply scale-95;
+  }
+
+  /* Button Glow Animation */
+  .btn-glow {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-glow::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: all 0.6s ease;
+  }
+
+  .btn-glow:hover::after {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary))) 1;
+  }
+
+  .backdrop-glass {
+    @apply backdrop-blur-xl bg-white/[0.02] border border-white/[0.05];
   }
 }
